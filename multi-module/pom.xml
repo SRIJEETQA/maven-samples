@@ -107,9 +107,21 @@
         </plugin>
 
         <plugin>
-          <artifactId>maven-pmd-plugin</artifactId>
-          <version>2.6</version>
-        </plugin>
+                      <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-pmd-plugin</artifactId>
+                     <version>3.2</version>
+                        <configuration>
+                            <targetJdk>1.8</targetJdk>
+                            <aggregate>true</aggregate>
+                            <format>xml</format>
+                            <!-- CPD options -->
+                            <minimumTokens>20</minimumTokens>
+                            <!--<ignoreIdentifiers>true</ignoreIdentifiers>-->
+                            <failOnViolation>true</failOnViolation>
+                            <failurePriority>2</failurePriority>
+                        </configuration>
+            </plugin>
+
 
         <plugin>
           <artifactId>maven-project-info-reports-plugin</artifactId>
